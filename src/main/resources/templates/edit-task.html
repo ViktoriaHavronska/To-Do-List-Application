@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Task</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+<header>
+    <h1>Edit Task</h1>
+    <nav>
+        <a href="/tasks">Back to Tasks</a>
+    </nav>
+</header>
+
+<main>
+    <form action="/tasks" method="POST" th:object="${task}">
+        <input type="hidden" th:field="*{id}" />
+        <label for="name">Task Name</label>
+        <input type="text" id="name" th:field="*{name}" required>
+
+        <label for="description">Description</label>
+        <textarea id="description" th:field="*{description}"></textarea>
+
+        <button type="submit">Save Changes</button>
+    </form>
+
+</main>
+
+
+<footer>
+    <p>&copy; 2024 To-Do List App</p>
+</footer>
+</body>
+</html>
